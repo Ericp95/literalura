@@ -12,7 +12,7 @@ public class Libro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
     private String titulo;
     @ManyToOne
     private Autor autor;
@@ -38,11 +38,11 @@ public class Libro {
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        id = id;
     }
 
     public int getIdApi() {

@@ -11,7 +11,7 @@ import java.util.List;
 public class Idioma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int Id;
+    int id;
     String siglaIdioma;
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Libro> libros;
@@ -22,11 +22,11 @@ public class Idioma {
     public  Idioma(){}
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        id = id;
     }
 
     public List<Libro> getLibros() {
