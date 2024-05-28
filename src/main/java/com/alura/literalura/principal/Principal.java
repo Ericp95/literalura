@@ -54,7 +54,7 @@ public class Principal {
                     obtenerListaAutores();
                     break;
                 case 3:
-
+                    obtenerListadoLibrosBuscados();
                     break;
                 case 4:
 
