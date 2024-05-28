@@ -157,7 +157,78 @@ public class Principal {
         }
     }
 
+    private void obtenerAutoresVivosEnAnio(){
+        int anioLimite = 0;
+        List<Autor> listaAutores;
+        System.out.println("""
+                ----------------------------------
+                1 - Buscar autores hasta un año
+                2 - Buscar autores de un año hasta otro
+                0 - volver al menu anterior
+                ----------------------------------
+                """);
+        busquedaUsuario = verificarIngresoUsuario();
+        while (!busquedaUsuario.equals("0")){
+            switch (busquedaUsuario){
+                case "1":
+                    System.out.println("Ingrese el año hasta donde desea buscar:");
+                    anioLimite = verificarIngresoAnio();
+                    listaAutores = autorRepo.findByAnnoFallecimientoLessThanEqual(anioLimite);
+                    if (listaAutores.size() > 0){
+                        listaAutores.forEach(System.out::println);
+                    } else {
+                        System.out.println("No hay ningun Autor que existiese antes de ese año");
+                    }
+                    return;
+                case "2":
+                    System.out.println("Ingrese el año de nacimiento");
+                    int anioNacimiento = verificarIngresoAnio();
+                    System.out.println("Ahora el año de Limite");
+                    anioLimite = verificarIngresoAnio();
+                    listaAutores = autorRepo
+                            .findByAnnoNacimientoBetween(anioNacimiento, anioLimite);
+                    if (!listaAutores.isEmpty()){
+                        listaAutores.forEach(System.out::println);
+                    } else {
+                        System.out.println("No hay ningun Autor que existiese antes de ese año");
+                    }
+                    return;
+            }
+        }
+    }
 
+//    private String verificarIngresoUsuario(){
+//        String resultado = "";
+//        while (!resultado.matches("^\\d$")){
+//            resultado = teclado.nextLine();
+//            if(!resultado.matches("^\\d$")){
+//                System.out.println("Ingrese un valor valido:");
+//            } else return resultado;
+//        }
+//        return null;
+//    }
+
+//    private int verificarIngresoAnio(){
+//        String resultado = "";
+//        while (!resultado.matches("^\\d{4}$")){
+//            resultado = teclado.nextLine();
+//            if(!resultado.matches("^\\d{4}$")){
+//                System.out.println("Ingrese un valor valido:");
+//            } else break;
+//        }
+//        return Integer.valueOf(resultado);
+//    }
+
+//    private String verificarSiglasIdioma(){
+//        String resultado = "";
+//        while (!resultado.matches("^\\w{2}$")){
+//            resultado = teclado.nextLine();
+//            if(!resultado.matches("^\\w{2}$")){
+//                System.out.println("Ingrese un valor valido:");
+//            } else return resultado;
+//        }
+//        return null;
+//    }
 
 }
 
