@@ -57,7 +57,7 @@ public class Principal {
                     obtenerListadoLibrosBuscados();
                     break;
                 case 4:
-
+                    verificarSiglasIdioma();
                     break;
                 case 5:
 
@@ -145,6 +145,18 @@ public class Principal {
         } else {
             System.out.println("No hay ningun libro registrado hasta el momento");
         }
+    }
+
+    private void obtenerLibrosPorIdioma(){
+        System.out.println("Ingrese las siglas del idioma a filtrar:");
+        List<Idioma> listaIdiomas = idiomaRepo.findAll();
+        listaIdiomas.forEach(i -> System.out.println(i.getSiglaIdioma()));
+        String idiomaAFiltrar = verificarSiglasIdioma();
+        listaIdiomas.forEach(idioma -> {
+            if (idioma.getSiglaIdioma().equals(idiomaAFiltrar)){
+                System.out.println(idioma.getLibros());
+            }
+        });
     }
 
     private void obtenerListaAutores(){
