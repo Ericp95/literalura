@@ -197,16 +197,16 @@ public class Principal {
         }
     }
 
-//    private String verificarIngresoUsuario(){
-//        String resultado = "";
-//        while (!resultado.matches("^\\d$")){
-//            resultado = teclado.nextLine();
-//            if(!resultado.matches("^\\d$")){
-//                System.out.println("Ingrese un valor valido:");
-//            } else return resultado;
-//        }
-//        return null;
-//    }
+    private String verificarIngresoUsuario(){
+        String resultado = "";
+        while (!resultado.matches("^\\d$")){
+            resultado = teclado.nextLine();
+            if(!resultado.matches("^\\d$")){
+                System.out.println("Ingrese un valor valido:");
+            } else return resultado;
+        }
+        return null;
+    }
 
 //    private int verificarIngresoAnio(){
 //        String resultado = "";
