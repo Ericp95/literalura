@@ -208,27 +208,27 @@ public class Principal {
         return null;
     }
 
-//    private int verificarIngresoAnio(){
-//        String resultado = "";
-//        while (!resultado.matches("^\\d{4}$")){
-//            resultado = teclado.nextLine();
-//            if(!resultado.matches("^\\d{4}$")){
-//                System.out.println("Ingrese un valor valido:");
-//            } else break;
-//        }
-//        return Integer.valueOf(resultado);
-//    }
+    private int verificarIngresoAnio(){
+        String resultado = "";
+        while (!resultado.matches("^\\d{4}$")){
+            resultado = teclado.nextLine();
+            if(!resultado.matches("^\\d{4}$")){
+                System.out.println("Ingrese un valor valido:");
+            } else break;
+        }
+        return Integer.valueOf(resultado);
+    }
 
-//    private String verificarSiglasIdioma(){
-//        String resultado = "";
-//        while (!resultado.matches("^\\w{2}$")){
-//            resultado = teclado.nextLine();
-//            if(!resultado.matches("^\\w{2}$")){
-//                System.out.println("Ingrese un valor valido:");
-//            } else return resultado;
-//        }
-//        return null;
-//    }
+    private String verificarSiglasIdioma(){
+        String resultado = "";
+        while (!resultado.matches("^\\w{2}$")){
+            resultado = teclado.nextLine();
+            if(!resultado.matches("^\\w{2}$")){
+                System.out.println("Ingrese un valor valido:");
+            } else return resultado;
+        }
+        return null;
+    }
 
 }
 
