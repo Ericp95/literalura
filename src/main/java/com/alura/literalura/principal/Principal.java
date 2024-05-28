@@ -147,5 +147,15 @@ public class Principal {
         }
     }
 
+    private void obtenerListaAutores(){
+        List<Autor> listaAutores = autorRepo.findAll();
+        if(listaAutores.size() > 0){
+            System.out.println("Los autores registrados son:");
+            listaAutores.forEach(System.out::println);
+        } else {
+            System.out.println("No hay ningun autor registrado por el momento");
+        }
+    }
+
 }
 
