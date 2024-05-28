@@ -51,7 +51,7 @@ public class Principal {
                     obtenerLibro();
                     break;
                 case 2:
-
+                    obtenerListaAutores();
                     break;
                 case 3:
 
