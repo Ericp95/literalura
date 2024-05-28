@@ -12,12 +12,14 @@ public class Idioma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String siglaIdioma;
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Libro> libros;
-    public Idioma(IdiomaDTO idiomaDTO ){
-        siglaIdioma = idiomaDTO.lenguajes().get(0);
+    public Idioma(IdiomaDTO dto){
+        siglaIdioma = dto.lenguajes().get(0);
     }
+
 
     public  Idioma(){}
 
@@ -26,7 +28,7 @@ public class Idioma {
     }
 
     public void setId(int id) {
-        id = id;
+        this.id = id;
     }
 
     public List<Libro> getLibros() {
@@ -37,11 +39,25 @@ public class Idioma {
         this.libros = libros;
     }
 
-    public String getIdioma() {
+    public String getSiglaIdioma() {
         return siglaIdioma;
     }
 
-    public void setIdioma(String idioma) {
-        this.siglaIdioma = idioma;
+    public void setSiglaIdioma(String siglaIdioma) {
+        this.siglaIdioma = siglaIdioma;
     }
+
+    @Override
+    public String toString() {
+        return """
+                ---------IDIOMA----------
+                Codigo: %s
+                Libros: %s
+                """.formatted(siglaIdioma, libros);
+    }
+
+
+
+
+
 }
