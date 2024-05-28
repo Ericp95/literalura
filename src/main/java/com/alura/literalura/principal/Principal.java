@@ -57,7 +57,7 @@ public class Principal {
                     obtenerListadoLibrosBuscados();
                     break;
                 case 4:
-                    verificarSiglasIdioma();
+                    obtenerLibrosPorIdioma();
                     break;
                 case 5:
 
