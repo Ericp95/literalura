@@ -60,7 +60,7 @@ public class Principal {
                     obtenerLibrosPorIdioma();
                     break;
                 case 5:
-
+                    obtenerAutoresVivosEnAnio();
                     break;
                 case 0:
                     System.out.println("Cerrando la aplicación...");
